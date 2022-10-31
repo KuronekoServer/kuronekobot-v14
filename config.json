@@ -1,0 +1,8 @@
+{
+    "token": "うんこ",
+    "developerGuild": "968323582323196053",
+    "activityInterval": 5,
+    "botMainColor": "埋め込みの色",
+    "botErrorColor": "0xdb3535",
+    "database": "mongodb://うんこ:5503"
+}
