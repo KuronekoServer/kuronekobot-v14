@@ -1,2 +1,6 @@
 # kuronekobot-v14
-placeholder
+`npm i`
+config.jsonをやる
+src/bot,jsを起動
+おわり　たのしんでね
+
