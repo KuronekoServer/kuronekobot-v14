@@ -19,7 +19,7 @@ module.exports = {
 
         if(oldChannel !== newChannel && newChannel && newChannel.id === data.ChannelID) {
             const voiceChannel = await guild.channels.create({
-                name: `🔰 │ ${member.user.tag}`,
+                name: `🔰 │ ${member.user.tag}のVC`,
                 type: ChannelType.GuildVoice,
                 parent: newChannel.parent,
                 permissionOverwrites: [
