@@ -22,7 +22,7 @@ module.exports = {
         const url = options.getString("url")
         const color = client.hexMainColor
 
-        const ScreenshotEmbed = new EmbedBuilder()
+        const ScreenShotEmbed = new EmbedBuilder()
         
         const path = member.id + ".jpg";
         //スクリーンショットを撮る部分
@@ -32,7 +32,7 @@ module.exports = {
         //スクリーンショット
         await page.screenshot({ path: path});
         //embedにデータを追加
-        ScreenSHotEmbed.addFields({ name: "サイトアドレス", value: url})
+        .addFields({ name: "サイトアドレス", value: url})
         .setColor(color)
         .setTitle("スクリーンショット")
         .setImage("attachment://" + path)
