@@ -1,4 +1,5 @@
-const { Client, SlashCommandBooleanOption, SlashCommandBuilder, ChatInputCommandInteraction, AttachmentBuilder } = require('discord.js')
+const { Client, SlashCommandBooleanOption, SlashCommandBuilder, ChatInputCommandInteraction, AttachmentBuilder } = require('discord.js');
+const puppeteer = require('puppeteer');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -23,8 +24,21 @@ module.exports = {
 
         const ScreenshotEmbed = new EmbedBuilder()
         
-
-  
-        }
+        const path = member.id + ".jpg";
+        //スクリーンショットを撮る部分
+        const VirtualBrowser = await puppeteer.launch();
+        const page = await VirtualBrowser.newPage();
+        await page.goto(url);
+        //スクリーンショット
+        await page.screenshot({ path: path});
+        //embedにデータを追加
+        ScreenSHotEmbed.addFields({ name: "サイトアドレス", value: url})
+        .setColor(color)
+        .setTitle("スクリーンショット")
+        .setImage("attachment://" + path)
+        .setFooter({ text: client.user.tag, iconURL: client.user.displayAvatarURL()});
+        
+        await interaction.reply({ embeds: [ScreenShotEmbed]});
+        
     }
 }
