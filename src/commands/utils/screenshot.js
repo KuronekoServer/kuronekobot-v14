@@ -32,7 +32,7 @@ module.exports = {
         //スクリーンショット
         await page.screenshot({ path: path});
         //embedにデータを追加
-        .addFields({ name: "サイトアドレス", value: url})
+        ScreenShotEmbed.addFields({ name: "サイトアドレス", value: url})
         .setColor(color)
         .setTitle("スクリーンショット")
         .setImage("attachment://" + path)
