@@ -6,21 +6,6 @@ const client = new Client({ intents: [Guilds, GuildMembers, GuildMessages, Guild
 
 client.config = require('../config.json') 
 const { botMainColor, botErrorColor } = require('../config.json')
-
-/* Music System */
-const { DisTube } = require('distube')
-const { SpotifyPlugin } = require('@distube/spotify')
-const { SoundCloudPlugin } = require('@distube/soundcloud')
-
-client.distube = new DisTube(client, {
-  leaveOnEmpty: true,
-  nsfw: true,
-  emitNewSongOnly: true,
-  leaveOnFinish: true,
-  plugins: [ new SpotifyPlugin(), new SoundCloudPlugin() ] 
-})
-module.exports = client;
-
 client.voiceGenerator = new Collection();
 client.commands = new Collection();
 client.modals = new Collection();

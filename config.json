@@ -1,8 +1,8 @@
 {
-    "token": "うんこ",
-    "developerGuild": "968323582323196053",
+    "token": "OTY5NTA1NDM5MTgyMTIzMDI4.G8fczm.ympWbwpfQ-o7zZyp0ks0iBmwl45lnNqUovxBDM",
+    "developerGuild": "971043823985758229",
     "activityInterval": 5,
-    "botMainColor": "埋め込みの色",
+    "botMainColor": "0xFFFFFF",
     "botErrorColor": "0xdb3535",
-    "database": "mongodb://うんこ:5503"
+    "database": "kuronekobot-v14-db00008753.mdb0002659.db.skysql.net"
 }

@@ -1,15 +1,15 @@
-const { model, Schema } = require('mongoose')
+const { Sequelize, Model, DataTypes } = require('sequelize');
+const { database } = require("../../config.json")
+const sequelize = new Sequelize(database);
 
-module.exports = model("Features", new Schema({
-    GuildID: String,
+const User = sequelize.define('Features', {
     LevelSystem: {
-        Enabled: {
-            type: Boolean,
-            default: false,
-        },
-        Background: {
-            type: String,
-            default: "https://cdn.discordapp.com/attachments/965674056080826368/1003622130921001040/background.png"
-        }
-    }
-}))
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      }
+    },
+    GuildID: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+      }
+    });

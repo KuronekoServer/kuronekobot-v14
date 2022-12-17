@@ -1,8 +1,10 @@
-const { model, Schema } = require('mongoose')
+const { Sequelize, Model, DataTypes } = require('sequelize');
+const { database } = require("../../config.json")
+const sequelize = new Sequelize(database);
 
-module.exports = model("AFK", new Schema({
-    GuildID: String,
-    UserID: String,
-    Status: String,
-    Time: String
-}))
+const User = sequelize.define('AFK', {
+  GuildID: DataTypes.STRING,
+  UserID: DataTypes.STRING,
+  Status: DataTypes.STRING,
+  Time: DataTypes.STRING,
+});

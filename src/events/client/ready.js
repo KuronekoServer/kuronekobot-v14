@@ -1,6 +1,6 @@
 const { Client } = require("discord.js");
 const { activityInterval, database } = require("../../../config.json")
-const mongoose = require('mongoose')
+const { Sequelize } = require('sequelize');
 
 module.exports = {
   name: "ready",
@@ -13,8 +13,13 @@ module.exports = {
 
     /* Connect to database */
     if(!database) return;
-    mongoose.connect(database, {}).then(() => console.log("The client is now connected to the database!")  
-    ).catch((err) => console.error(err))
+    const sequelize = new Sequelize(database)
+    try {
+      await sequelize.authenticate();
+      console.log('DBに接続できました');
+    } catch (error) {
+      console.error('DB接続に失敗しました: ', error);
+    }
 
     console.log(
       `Logged in as ${client.user.tag} and running on ${client.guilds.cache.size} Server!`

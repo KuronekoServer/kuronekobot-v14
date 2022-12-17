@@ -1,6 +1,8 @@
-const { model, Schema } = require('mongoose')
+const { Sequelize, Model, DataTypes } = require('sequelize');
+const { database } = require("../../config.json")
+const sequelize = new Sequelize(database);
 
-module.exports = model("Captcha", new Schema({
-    GuildID: String,
-    Role: String
-}))
+const User = sequelize.define('Captcha', {
+  GuildID: DataTypes.STRING,
+  Role: DataTypes.STRING,
+});
